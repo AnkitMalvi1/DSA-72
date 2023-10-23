@@ -1,0 +1,13 @@
+int a,b;
+
+for(i->0 to n){
+    for(j->0 to n){
+        // Code here
+    }
+}
+
+space complexity of above -> o(1)
+
+int n; // input of size
+cin>>n;
+vector<int> v(n); -> space complexity -> o(n)

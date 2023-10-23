@@ -1,0 +1,18 @@
+Worst case -> Big o notation
+upperbound
+
+Avg case -> theta 0 notation
+
+best case -> Omega _O_ notation
+lowerbound
+
+
+^ o(n!)
+| o(2^n)
+| o(n^3)
+| o(n^2)
+| o(nlogn)
+| o(n)
+| o(logn)
+| o(1)
+
