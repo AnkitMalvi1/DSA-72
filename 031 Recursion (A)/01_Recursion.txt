@@ -1,0 +1,14 @@
+RECURSION:
+
+Head Recursion:
+1. Base Case: ->  return mandatory
+2. Recursive Relation (mandatory)
+3. Processing Part
+
+OR
+
+Tail Recursion:
+1. Base Case: ->  return mandatory
+2. Processing Part
+3. Recursive Relation (mandatory)
+
