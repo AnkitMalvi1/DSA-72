@@ -1,0 +1,6 @@
+Time Complexity of Recursive Algo: 
+
+Factorial: o(n)
+Binary Search: o(logn)
+Merge Sort: o(nlogn)
+Fibonacci: o(2^n)
