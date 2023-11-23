@@ -1,0 +1,49 @@
+Object -> State/Properties     
+       -> Behaviour
+       -> Instance of Class
+
+Class: User-Defined Data-type
+
+Access Modifiers: 
+-> Private (Default)
+-> Public
+-> Protected
+
+Hero ank; ->        BTS -> ank.Hero();
+     |
+     Object Create -> Constructor
+
+Constructor:-
+-> Object Creation invoke
+-> no return-type
+-> no input parameters
+
+class Hero(){
+       Hero(){ Default Constructor }
+       Hero(int health,int level){ Parameterised Constructor }
+       Hero(Hero& temp){ Copy Constructor }
+};
+
+this Pointer:-
+-> Current Object -> Address
+Ex: this->health = health;
+
+Copy Assignment Operator:- 
+Hero a(10,'C');
+Hero b(20,'B');
+a=b;
+
+Destructor -> Memory Deallocate
+~Hero(){}
+
+static keyword variable: Directly belongs to class.
+class Solution{
+       static int timeToComplete;
+       int Hero::timeToComplete = 5;
+};
+int main(){
+       cout<<Hero::timeToComplete<<endl;
+}
+
+
+
