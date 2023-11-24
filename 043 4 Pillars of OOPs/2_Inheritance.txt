@@ -1,0 +1,55 @@
+2. Inheritance:
+
+[Human] -> parent class/ super class
+   |
+[Male] -> sub-class/ child class/ derived class 
+
+class [childclass] : [mode] [parentclass]
+
+-> private data members of any class cannot be inherited.
+
+protected: -> similar of private
+Condition:
+-> Accessible inside own class
+-> child/ derived class can access.
+
+Types of Inheritance ->
+1. Single Inheritance: 
+[A]
+ |
+[B]
+
+2. Multilevel Inheritance:
+[A]
+ |
+[B]
+ |
+[C]
+
+3. Multiple Inheritance:
+[A]  [B]
+  \  /
+   [C]
+
+4. Hierarchical Inheritance:
+      [A]
+      /  \
+    [B]  [C]
+   / |   |  \  \
+[D] [E] [F][G][H]
+
+5. Hybrid Inheritance:
+Combination of more than 1 type of Inheritance.
+
+Inheritance Ambiguity:
+class A{
+    func(){}
+}
+class B{
+    func(){}
+}
+class C: public A, public B{
+    cout<<func()<<endl;  ?
+    ::
+}
+

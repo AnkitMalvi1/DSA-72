@@ -1,0 +1,18 @@
+1. Encapsulation:
+
+wrapping up data members & functions.
+
+data members-> ...
+functions->  ,,,
+[...|,,,]-> class
+
+Fully Encapsulated Class: all data members -> private
+
+"Information hiding/ Data hiding"
+
+Advantages:
+-> Data Hide -> security |
+-> if we want, we can make class - read only
+-> code reusability
+-> unit testing
+

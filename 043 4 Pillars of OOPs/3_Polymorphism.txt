@@ -1,0 +1,31 @@
+3. Polymorphism:
+
+Poly morphism
+  |     |
+Many   Forms
+
+          Son
+ brother [Ank] husband
+         father
+
+Types of Polymorphism:
+(A) Compile-time Polymorphism (Static Polymorphism)
+(B) Run-time Polymorphism (Dynamic Polymorphism)
+
+(A) Compile-time Polymorphism:
+-> Function Overloading ->
+{
+    func(){}
+    func(int name){}
+    func(char ch){}
+    func(int age,double value){}
+}
+-> Operator Overloading ->
+Operators that cannot be overloaded:-
+::  .*  .  ?:
+
+(B) Run-time Polymorphism:
+-> Method/ Function Overriding
+   Rules: -> Inheritance is must.
+          -> func() name same.
+          -> func() args same.
