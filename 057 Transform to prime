@@ -1,0 +1,29 @@
+int SieveOfEratosthenes(int n, int sum) 
+    { 
+    bool prime[n + 1]; 
+    memset(prime, true, sizeof(prime)); 
+    for (int p = 2; p * p <= n; p++) { 
+        if (prime[p] == true) { 
+            for (int i = p * p; i <= n; i += p) 
+                prime[i] = false; 
+        } 
+    } 
+        int temp;
+        for (int p = sum; p <= 1000100; p++) 
+            if (prime[p]) 
+                {
+                    temp=p;
+                    break;
+                }
+                
+    return temp-sum;
+    }
+    int minNumber(int arr[],int N)
+    {
+        int sum=0;
+        for(int i=0;i<N;i++)
+            sum+=arr[i];
+        if(sum==1)
+            return 1;
+        return SieveOfEratosthenes(1000100, sum);
+    }
