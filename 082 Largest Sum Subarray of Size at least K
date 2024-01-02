@@ -1,0 +1,32 @@
+long long int maxSumWithK(long long int a[], long long int n, long long int k) 
+    {
+        long long int i = 0, j = 0;
+        long long int mx = INT_MIN;
+        long long int sum = 0, preNeg = 0;
+        while(j<n)
+        {
+            sum += a[j];
+            if(j-i+1 < k)
+            {
+                j++;
+            }
+            else if(j-i+1 == k)
+            {
+                mx = max(mx, sum);
+                j++;
+            }
+            else
+            {
+                mx = max(mx, sum);
+                preNeg += a[i++];
+                if(preNeg < 0)
+                {
+                    sum -= preNeg;
+                    mx = max(mx, sum);
+                    preNeg = 0;
+                }
+                j++;
+            }
+        }
+        return mx;
+    }
