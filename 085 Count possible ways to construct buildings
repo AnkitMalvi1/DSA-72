@@ -1,0 +1,17 @@
+const int mod = 1e9+7;
+	int TotalWays(int N)
+	{
+	    // Code here
+	     int ans=0;
+        if(N==1)
+            return 4;
+        int a=1,b=2;
+        for(int i=2;i<=N;i++)
+        {
+            ans = (a%mod+b%mod)%mod;
+            a = b;
+            b =ans;
+        }
+        ans = static_cast<int>((1LL*ans*ans)%mod);
+        return ans;
+	}
