@@ -1,0 +1,29 @@
+int givecount(int x,vector<int> &v){
+        int ans =0;
+        for(int i=2;i<=x;i++){
+            if(v[i]==0){
+            int z =i;
+            while(z<=x){
+                ans+=x/z;
+                z*=i;
+                
+            }
+            }
+        }
+        return ans;
+    }
+	int sumOfPowers(int a, int b){
+	    // Code here
+	    vector<int>v(b+1,0);
+        v[0] =1;
+        v[1] =1;
+        for(int i=2;i<=b;i++){
+            if(v[i]==0){
+            for(int j = i+i;j<=b;j+=i){
+                v[j] = 1;
+            }
+            }
+        }
+        return givecount(b,v) - givecount(a-1,v);
+
+	}
