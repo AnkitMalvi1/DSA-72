@@ -1,0 +1,19 @@
+Node* insertionSort(struct Node* head_ref)
+    {
+        //code here
+        vector<int> v;
+        Node* curr=head_ref;
+        while(curr){
+            v.push_back(curr->data);
+            curr=curr->next;
+        }
+        
+        sort(v.begin(),v.end());
+        
+        curr=head_ref;
+        for(auto it:v){
+            curr->data=it;
+            curr=curr->next;
+        }
+        return head_ref;
+    }
