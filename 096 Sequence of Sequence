@@ -1,0 +1,12 @@
+int solve(int m,int n)
+    {
+        if(n>m)
+        return 0;
+        if(n==0)
+        return 1;
+        return solve(m/2,n-1)+solve(m-1,n);
+    }
+    int numberSequence(int m, int n){
+        // code here
+        solve(m,n);
+    }
