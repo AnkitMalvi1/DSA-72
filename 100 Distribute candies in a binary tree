@@ -1,0 +1,16 @@
+  public:
+    int ans=0;
+    int solve(Node* root){
+        if(!root)return 0;
+        int l=solve(root->left);
+        int r=solve(root->right);
+        ans+=abs(l)+abs(r);
+        return root->key+l+r-1;
+    }
+    public:
+    int distributeCandy(Node* root)
+    {
+        //code here
+        solve(root);
+        return ans;
+    }
