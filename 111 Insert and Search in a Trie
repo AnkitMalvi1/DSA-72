@@ -1,0 +1,34 @@
+public:
+        //Function to insert string into TRIE.
+        void insert(struct TrieNode *root, string key)
+        {
+            // code here
+            TrieNode *node = root;
+        
+            for(auto ch: key) 
+            {
+                if(node->children[ch - 'a'] == NULL)
+                    node->children[ch - 'a'] = new TrieNode();
+                
+                node = node->children[ch - 'a'];
+            }
+            
+            node->isLeaf = true;
+        }
+        
+        //Function to use TRIE data structure and search the given string.
+        bool search(struct TrieNode *root, string key) 
+        {
+            // code here
+            TrieNode *node = root;
+        
+            for(auto ch: key) 
+            {
+                if(node->children[ch - 'a'] == NULL)
+                    return false;
+                
+                node = node->children[ch - 'a'];
+            }
+            
+            return node->isLeaf;
+        }
