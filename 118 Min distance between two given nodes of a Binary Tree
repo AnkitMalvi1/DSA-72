@@ -1,0 +1,108 @@
+public:
+    void findtarget(Node*root,int a,Node*&ans)
+    {
+        if(root==NULL)
+        {
+            return;
+        }
+        
+        if(root->data==a)
+        {
+            ans=root;
+            return;
+        }
+        
+        findtarget(root->left,a,ans);
+        findtarget(root->right,a,ans);
+    }
+    
+    
+    void makeparent(Node*root,unordered_map<Node*,Node*>&parent)
+    {
+        queue<Node*>q;
+        q.push(root);
+        while(!q.empty())
+        {
+            auto element=q.front();q.pop();
+            if(element->left)
+            {
+                parent[element->left]=element;
+                q.push(element->left);
+            }
+            
+            if(element->right)
+            {
+                parent[element->right]=element;
+                q.push(element->right);
+            }
+        }
+    }
+    int findDist(Node* root, int a, int b) {
+        Node*target=NULL;
+        findtarget(root,a,target);
+        
+        unordered_map<Node*,Node*>parent;
+        makeparent(root,parent);
+        
+        int currdist=0;
+        if(root==NULL) return 0;
+        
+        unordered_map<Node*,bool>visited;
+        queue<Node*>q;
+        q.push(target);
+        visited[target]=true;
+        while(!q.empty())
+        {
+            int size=q.size();
+            currdist++;
+            for(int i=0;i<size;i++)
+            {
+                auto element=q.front();q.pop();
+                if(element->left && !visited[element->left])
+                {
+                    if(element->left->data==b)
+                    {
+                        return currdist;
+                        break;
+                    }
+                    else
+                    {
+                        visited[element->left]=true;
+                        q.push(element->left);
+                    }
+                }
+                
+                if(element->right && !visited[element->right])
+                {
+                    if(element->right->data==b)
+                    {
+                        return currdist;
+                       break;
+                    }
+                    else
+                    {
+                        visited[element->right]=true;
+                        q.push(element->right);
+                    }
+                }
+                
+                if(parent[element] && !visited[parent[element]])
+                {
+                     Node*temp=parent[element];
+                     if(temp->data==b)
+                     {
+                        return currdist;
+                         break;
+                     }
+                     else
+                     {
+                         visited[parent[element]]=true;
+                         q.push(parent[element]);
+                     }
+                }
+            }
+            
+        }
+        
+        return 0;
+    }
