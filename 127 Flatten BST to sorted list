@@ -1,0 +1,31 @@
+class Solution
+{
+public:
+void findEle(Node*root,vector<int>&arr){
+    if(!root)return ;
+    findEle(root->left,arr);
+    arr.push_back(root->data);
+    findEle(root->right,arr);
+    
+}
+    Node *flattenBST(Node *root)
+    {
+        vector<int>arr;
+        Node* temp=root;
+        findEle(temp,arr);
+        // for(auto i:arr)cout<<i<<" ";
+        // return NULL;
+        Node*ans=root;
+        root->left=NULL;
+        root->right=NULL;
+        root->data=arr[0];
+        for(int i=1;i<arr.size();i++){
+            Node * t=new Node(arr[i]);
+            root->right=t;
+            root=t;
+            
+        }
+        
+        return ans;
+    }
+};
